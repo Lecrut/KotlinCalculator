@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
-        android:text="← Back" />
+        android:text="@string/button_back" />
 
 
 </RelativeLayout>

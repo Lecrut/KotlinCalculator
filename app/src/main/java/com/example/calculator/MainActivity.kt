@@ -7,27 +7,31 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import kotlin.system.exitProcess
 
 class MainActivity : AppCompatActivity() {
-
-    lateinit var closeApplicationBtn: Button
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
 
-        closeApplicationBtn = findViewById(R.id.idBtnCloseApplication)
-        val activity: MainActivity = MainActivity()
+        val closeApplicationBtn = findViewById<Button>(R.id.idBtnCloseApplication)
+        val activityMain: MainActivity = MainActivity()
+        val activityScientific: ScientificActivity = ScientificActivity()
+        val activitySimple: SimpleActivity = SimpleActivity()
 
         closeApplicationBtn.setOnClickListener {
-            activity.finish()
-            System.exit(0)
+            activityScientific.finish()
+            activitySimple.finish()
+            activityMain.finish()
+            super.onDestroy()
+            exitProcess(0)
         }
 
         val buttonSimpleClick = findViewById<Button>(R.id.simple)
         buttonSimpleClick.setOnClickListener {
             val intent = Intent(this, SimpleActivity::class.java)
+            activityMain.finish()
             startActivity(intent)
         }
 
