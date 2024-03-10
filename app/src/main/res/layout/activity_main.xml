@@ -21,12 +21,14 @@
 <!--    </RelativeLayout>-->
 
     <Button
+        android:id="@+id/simple"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="Simple calculator"  />
 
     <Button
+        android:id="@+id/scientific"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
