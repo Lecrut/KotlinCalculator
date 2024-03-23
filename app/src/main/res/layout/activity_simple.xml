@@ -51,40 +51,93 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_margin="5sp"
-            android:backgroundTint="@color/orange"
+            android:backgroundTint="@color/smokeGray"
             android:textStyle="bold"
-            android:textSize="25sp"
             android:layout_weight="1"
-            android:text="@string/button_7"
-            android:id="@+id/button7" />
+            android:autoSizeTextType="uniform"
+            android:autoSizeMaxTextSize="40sp"
+            android:text="@string/button_plus_minus"
+            android:id="@+id/buttonPlusMinus" />
+
         <Button
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_margin="5sp"
+            android:backgroundTint="@color/smokeGray"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMaxTextSize="40sp"
+            android:text="@string/button_power"
+            android:id="@+id/buttonPower" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:backgroundTint="@color/smokeGray"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMaxTextSize="40sp"
+            android:text="@string/button_clear"
+            android:id="@+id/buttonClear" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:backgroundTint="@color/smokeGray"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMaxTextSize="40sp"
+            android:text="@string/button_ca"
+            android:id="@+id/buttonCA" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:backgroundTint="@color/orange"
             android:textStyle="bold"
-            android:textSize="25sp"
+            android:layout_weight="1"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMaxTextSize="40sp"
+            android:text="@string/button_7"
+            android:id="@+id/button7" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:backgroundTint="@color/orange"
+            android:textStyle="bold"
             android:layout_weight="1"
             android:text="@string/button_8"
             android:id="@+id/button8" />
+
         <Button
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_margin="5sp"
             android:backgroundTint="@color/orange"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMaxTextSize="40sp"
             android:textStyle="bold"
-            android:textSize="25sp"
             android:layout_weight="1"
             android:text="@string/button_9"
             android:id="@+id/button9" />
         <Button
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_margin="5sp"
             android:backgroundTint="@color/smokeGray"
             android:textStyle="bold"
-            android:textSize="25sp"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMaxTextSize="40sp"
             android:layout_weight="1"
             android:text="@string/button_divide"
             android:id="@+id/buttonDivide" />
@@ -100,40 +153,40 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_margin="5sp"
             android:backgroundTint="@color/orange"
             android:textStyle="bold"
-            android:textSize="25sp"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMaxTextSize="40sp"
             android:layout_weight="1"
             android:text="@string/button_4"
             android:id="@+id/button4" />
         <Button
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_margin="5sp"
             android:backgroundTint="@color/orange"
             android:textStyle="bold"
-            android:textSize="25sp"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMaxTextSize="40sp"
             android:layout_weight="1"
             android:text="@string/button_5"
             android:id="@+id/button5" />
         <Button
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_margin="5sp"
             android:backgroundTint="@color/orange"
             android:textStyle="bold"
-            android:textSize="25sp"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMaxTextSize="40sp"
             android:layout_weight="1"
             android:text="@string/button_6"
             android:id="@+id/button6" />
         <Button
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_margin="5sp"
             android:backgroundTint="@color/smokeGray"
             android:textStyle="bold"
-            android:textSize="25sp"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMaxTextSize="40sp"
             android:layout_weight="1"
             android:text="@string/button_multiply"
             android:id="@+id/buttonMultiply" />
@@ -149,40 +202,40 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_margin="5sp"
             android:backgroundTint="@color/orange"
             android:textStyle="bold"
-            android:textSize="25sp"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMaxTextSize="40sp"
             android:layout_weight="1"
             android:text="@string/button_1"
             android:id="@+id/button1" />
         <Button
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_margin="5sp"
             android:backgroundTint="@color/orange"
             android:textStyle="bold"
-            android:textSize="25sp"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMaxTextSize="40sp"
             android:layout_weight="1"
             android:text="@string/button_2"
             android:id="@+id/button2" />
         <Button
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_margin="5sp"
             android:backgroundTint="@color/orange"
             android:textStyle="bold"
-            android:textSize="25sp"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMaxTextSize="40sp"
             android:layout_weight="1"
             android:text="@string/button_3"
             android:id="@+id/button3" />
         <Button
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_margin="5sp"
             android:backgroundTint="@color/smokeGray"
             android:textStyle="bold"
-            android:textSize="25sp"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMaxTextSize="40sp"
             android:layout_weight="1"
             android:text="@string/button_minus"
             android:id="@+id/buttonMinus" />
@@ -198,40 +251,40 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_margin="5sp"
             android:backgroundTint="@color/smokeGray"
             android:textStyle="bold"
-            android:textSize="25sp"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMaxTextSize="40sp"
             android:layout_weight="1"
             android:text="@string/button_dot"
             android:id="@+id/buttonDot" />
         <Button
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_margin="5sp"
             android:backgroundTint="@color/orange"
             android:textStyle="bold"
-            android:textSize="25sp"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMaxTextSize="40sp"
             android:layout_weight="1"
             android:text="@string/button_0"
             android:id="@+id/button0" />
         <Button
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_margin="5sp"
-            android:backgroundTint="@color/smokeGray"
+            android:backgroundTint="@color/red"
             android:textStyle="bold"
-            android:textSize="25sp"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMaxTextSize="40sp"
             android:layout_weight="1"
             android:text="@string/button_equals"
             android:id="@+id/buttonEquals" />
         <Button
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_margin="5sp"
             android:backgroundTint="@color/smokeGray"
             android:textStyle="bold"
-            android:textSize="25sp"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMaxTextSize="40sp"
             android:layout_weight="1"
             android:text="@string/button_plus"
             android:id="@+id/buttonPlus" />
