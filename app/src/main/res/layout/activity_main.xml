@@ -8,17 +8,10 @@
     android:gravity="center"
     tools:context=".MainActivity">
 
-<!--    <RelativeLayout-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content">-->
-
-<!--        <TextView-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="Calculator"-->
-<!--            />-->
-
-<!--    </RelativeLayout>-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name" />
 
     <Button
         android:id="@+id/simple"
@@ -32,15 +25,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Scientific calculator"  />
+        android:text="@string/scientific_calculator"  />
+
+    <Button
+        android:id="@+id/idBtnInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/info" />
 
     <Button
         android:id="@+id/idBtnCloseApplication"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_margin="20dp"
-        android:text="Close the application"
-        android:textAllCaps="false" />
+        android:backgroundTint="@color/red"
+        android:layout_gravity="center"
+        android:text="@string/close_the_application" />
 
 </LinearLayout>

@@ -18,4 +18,8 @@
     <string name="button_7">7</string>
     <string name="button_back">← Back</string>
     <string name="simple_calculator">Simple calculator</string>
+    <string name="close_the_application">Close the application</string>
+    <string name="scientific_calculator">Scientific calculator</string>
+    <string name="info">Info</string>
+    <string name="author">Author: Filip Lecrut</string>
 </resources>
