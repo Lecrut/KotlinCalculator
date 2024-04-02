@@ -23,8 +23,9 @@
     <string name="info">Info</string>
     <string name="author">Author: Filip Lecrut</string>
     <string name="button_factorial">!\n</string>
-    <string name="button_ca">CA</string>
+    <string name="button_ca">AC</string>
     <string name="button_clear"><![CDATA[<-]]></string>
     <string name="button_power">^</string>
     <string name="button_plus_minus">+/-</string>
+    <string name="button_c">C/CE</string>
 </resources>
