@@ -78,10 +78,86 @@
             android:layout_weight="1"
             android:autoSizeTextType="uniform"
             android:autoSizeMaxTextSize="40sp"
+            android:text="@string/button_percent"
+            android:id="@+id/buttonPercent" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:backgroundTint="@color/smokeGray"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMaxTextSize="40sp"
             android:text="@string/button_ca"
             android:id="@+id/buttonCA" />
 
     </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:backgroundTint="@color/smokeGray"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMaxTextSize="40sp"
+            android:text="@string/button_sin"
+            android:id="@+id/buttonSin" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:backgroundTint="@color/smokeGray"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMaxTextSize="40sp"
+            android:text="@string/button_cos"
+            android:id="@+id/buttonCos" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:backgroundTint="@color/smokeGray"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMaxTextSize="40sp"
+            android:text="@string/button_tan"
+            android:id="@+id/buttonTan" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:backgroundTint="@color/smokeGray"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMaxTextSize="40sp"
+            android:text="@string/button_sqrt"
+            android:id="@+id/buttonSqrt" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:backgroundTint="@color/smokeGray"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMaxTextSize="40sp"
+            android:text="@string/button_factorial"
+            android:id="@+id/buttonFactorial" />
+
+    </LinearLayout>
+
 
 
     <LinearLayout
@@ -122,6 +198,18 @@
             android:layout_weight="1"
             android:text="@string/button_9"
             android:id="@+id/button9" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:backgroundTint="@color/smokeGray"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMaxTextSize="40sp"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:text="@string/button_toSquare"
+            android:id="@+id/buttonToSquare" />
+
         <Button
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
@@ -171,6 +259,18 @@
             android:layout_weight="1"
             android:text="@string/button_6"
             android:id="@+id/button6" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:backgroundTint="@color/smokeGray"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMaxTextSize="40sp"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:text="@string/button_power"
+            android:id="@+id/buttonPower" />
+
         <Button
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
@@ -220,6 +320,18 @@
             android:layout_weight="1"
             android:text="@string/button_3"
             android:id="@+id/button3" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:backgroundTint="@color/smokeGray"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMaxTextSize="40sp"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:text="@string/button_log"
+            android:id="@+id/buttonLog" />
+
         <Button
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
@@ -249,6 +361,7 @@
             android:layout_weight="1"
             android:text="@string/button_dot"
             android:id="@+id/buttonDot" />
+
         <Button
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
@@ -259,6 +372,7 @@
             android:layout_weight="1"
             android:text="@string/button_0"
             android:id="@+id/button0" />
+
         <Button
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
@@ -269,6 +383,18 @@
             android:layout_weight="1"
             android:text="@string/button_equals"
             android:id="@+id/buttonEquals" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:backgroundTint="@color/smokeGray"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMaxTextSize="40sp"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:text="@string/button_ln"
+            android:id="@+id/buttonLn" />
+
         <Button
             android:layout_width="wrap_content"
             android:layout_height="match_parent"

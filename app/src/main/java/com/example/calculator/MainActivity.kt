@@ -16,16 +16,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val closeApplicationBtn = findViewById<Button>(R.id.idBtnCloseApplication)
-        val activityMain: MainActivity = MainActivity()
-        val activityScientific: ScientificActivity = ScientificActivity()
-        val activitySimple: SimpleActivity = SimpleActivity()
-        val activityInfo: InfoActivity = InfoActivity()
 
         closeApplicationBtn.setOnClickListener {
-            activityScientific.finish()
-            activitySimple.finish()
-            activityMain.finish()
-            activityInfo.finish()
+            this.finish()
             super.onDestroy()
             exitProcess(0)
         }
@@ -33,19 +26,21 @@ class MainActivity : AppCompatActivity() {
         val buttonSimpleClick = findViewById<Button>(R.id.simple)
         buttonSimpleClick.setOnClickListener {
             val intent = Intent(this, SimpleActivity::class.java)
-            activityMain.finish()
+            this.finish()
             startActivity(intent)
         }
 
         val buttonScientificClick = findViewById<Button>(R.id.scientific)
         buttonScientificClick.setOnClickListener {
             val intent = Intent(this, ScientificActivity::class.java)
+            this.finish()
             startActivity(intent)
         }
 
         val buttonInfoClick = findViewById<Button>(R.id.idBtnInfo)
         buttonInfoClick.setOnClickListener {
             val intent = Intent(this, InfoActivity::class.java)
+            this.finish()
             startActivity(intent)
         }
     }

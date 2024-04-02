@@ -6,4 +6,6 @@ enum class MathOperation {
     SUBTRACT,
     DIVIDE,
     MULTIPLY,
+    POWER,
+    PERCENT,
 }

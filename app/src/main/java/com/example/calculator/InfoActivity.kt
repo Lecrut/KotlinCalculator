@@ -13,6 +13,7 @@ class InfoActivity : AppCompatActivity() {
         val buttonBackClick = findViewById<Button>(R.id.backButton)
         buttonBackClick.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
+            this.finish()
             startActivity(intent)
         }
     }

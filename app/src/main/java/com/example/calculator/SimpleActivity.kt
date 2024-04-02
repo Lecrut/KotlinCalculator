@@ -6,6 +6,8 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import java.lang.Math.pow
+import kotlin.math.pow
 
 open class SimpleActivity : AppCompatActivity() {
 
@@ -13,7 +15,7 @@ open class SimpleActivity : AppCompatActivity() {
     lateinit var textPlace: TextView;
     private var currentOperation: MathOperation = MathOperation.NONE;
     private var insideSpace: Double = 0.0;
-    private var isNextClear: Boolean = false;
+    var isNextClear: Boolean = false;
     var buttonCCETimes: Int = 0;
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,6 +25,7 @@ open class SimpleActivity : AppCompatActivity() {
         val buttonBackClick = findViewById<Button>(R.id.backButton)
         buttonBackClick.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
+            this.finish()
             startActivity(intent)
         }
 
@@ -146,7 +149,7 @@ open class SimpleActivity : AppCompatActivity() {
     }
 
 
-    private fun buttonCCETimesToZero() {
+    fun buttonCCETimesToZero() {
         buttonCCETimes = 0
     }
 
@@ -174,6 +177,8 @@ open class SimpleActivity : AppCompatActivity() {
 
             }
             MathOperation.MULTIPLY -> currentDigit *= this.insideSpace
+            MathOperation.POWER -> currentDigit = this.insideSpace.pow(currentDigit)
+            MathOperation.PERCENT -> currentDigit = this.insideSpace / currentDigit * 100
             else -> {}
         }
         if (!isNextClear)
@@ -245,8 +250,8 @@ open class SimpleActivity : AppCompatActivity() {
             appendNumber("0")
     }
 
-    private fun updateDisplay() {
-        textPlace.text = currentInput.toString()
+    fun updateDisplay() {
+        textPlace.text = currentInput.toString().take(15)
     }
 
     fun appendNumber(number: String) {

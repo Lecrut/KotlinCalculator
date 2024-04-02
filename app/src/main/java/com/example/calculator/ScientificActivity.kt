@@ -4,7 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
+import java.lang.Math.pow
+import kotlin.math.*
 
 class ScientificActivity : SimpleActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -14,6 +15,7 @@ class ScientificActivity : SimpleActivity() {
         val buttonBackClick = findViewById<Button>(R.id.backButton)
         buttonBackClick.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
+            this.finish()
             startActivity(intent)
         }
 
@@ -133,6 +135,90 @@ class ScientificActivity : SimpleActivity() {
                 buttonCCETimes = 0
             }
         }
+
+        val buttonSine = findViewById<Button>(R.id.buttonSin)
+        buttonSine.setOnClickListener {
+            asapExecutiveMath(ExpressMathOperation.SINE)
+        }
+
+        val buttonCosine = findViewById<Button>(R.id.buttonCos)
+        buttonCosine.setOnClickListener {
+            asapExecutiveMath(ExpressMathOperation.COSINE)
+        }
+
+        val buttonTang = findViewById<Button>(R.id.buttonTan)
+        buttonTang.setOnClickListener {
+            asapExecutiveMath(ExpressMathOperation.TANGENT)
+        }
+
+        val buttonSqrt = findViewById<Button>(R.id.buttonSqrt)
+        buttonSqrt.setOnClickListener {
+            asapExecutiveMath(ExpressMathOperation.SQRT)
+        }
+
+        val buttonPercent = findViewById<Button>(R.id.buttonPercent)
+        buttonPercent.setOnClickListener {
+            setMathOperation(MathOperation.PERCENT)
+        }
+
+        val buttonFactorial = findViewById<Button>(R.id.buttonFactorial)
+        buttonFactorial.setOnClickListener {
+            asapExecutiveMath(ExpressMathOperation.FACTORIAL)
+        }
+
+        val buttonToSquare = findViewById<Button>(R.id.buttonToSquare)
+        buttonToSquare.setOnClickListener {
+            asapExecutiveMath(ExpressMathOperation.SQUARE)
+        }
+
+        val buttonPower = findViewById<Button>(R.id.buttonPower)
+        buttonPower.setOnClickListener {
+            setMathOperation(MathOperation.POWER)
+        }
+
+        val buttonLog = findViewById<Button>(R.id.buttonLog)
+        buttonLog.setOnClickListener {
+            asapExecutiveMath(ExpressMathOperation.L0GARITHM)
+        }
+
+        val buttonLn = findViewById<Button>(R.id.buttonLn)
+        buttonLn.setOnClickListener {
+            asapExecutiveMath(ExpressMathOperation.NATURAL_L0GARITHM)
+        }
+
+    }
+
+    private fun factorialRecursive(n: Int): Double {
+        require(n >= 0) { "n must be positive" }
+        return if (n <= 1) {
+            1.0
+        } else {
+            n * factorialRecursive(n - 1)
+        }
+    }
+
+    private fun asapExecutiveMath(operation: ExpressMathOperation) {
+        buttonCCETimesToZero()
+        val currentDigit = textPlace.text.toString().toDouble()
+        val result: Double = when(operation) {
+            ExpressMathOperation.SINE -> sin(currentDigit)
+            ExpressMathOperation.COSINE -> cos(currentDigit)
+            ExpressMathOperation.TANGENT -> tan(currentDigit)
+            ExpressMathOperation.SQRT -> sqrt(currentDigit)
+            ExpressMathOperation.FACTORIAL -> factorialRecursive(currentDigit.toInt())
+            ExpressMathOperation.SQUARE -> currentDigit*currentDigit
+            ExpressMathOperation.NATURAL_L0GARITHM -> ln(currentDigit)
+            ExpressMathOperation.L0GARITHM -> log10(currentDigit)
+        }
+        currentInput.clear()
+
+        if (result.rem(1.0) == 0.0) {
+            currentInput.insert(0, result.toInt().toString())
+        }
+        else
+            currentInput.insert(0, result.toString())
+        updateDisplay()
+        isNextClear = true
 
     }
 }
