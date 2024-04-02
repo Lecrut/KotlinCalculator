@@ -14,6 +14,7 @@ class SimpleActivity : AppCompatActivity() {
     private var currentOperation: MathOperation = MathOperation.NONE;
     private var insideSpace: Double = 0.0;
     private var isNextClear: Boolean = false;
+    private var buttonCCETimes: Int = 0;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -132,13 +133,25 @@ class SimpleActivity : AppCompatActivity() {
 
         val buttonCCE = findViewById<Button>(R.id.buttonC)
         buttonCCE.setOnClickListener {
-
+            if (buttonCCETimes == 0) {
+                clearDisplay()
+                buttonCCETimes = 1
+            }
+            else if (buttonCCETimes == 1) {
+                handleClearAll()
+                buttonCCETimes = 0
+            }
         }
 
     }
 
 
+    private fun buttonCCETimesToZero() {
+        buttonCCETimes = 0
+    }
+
     private fun getResult() {
+        buttonCCETimesToZero()
         var currentDigit = textPlace.text.toString().toDouble()
         when( this.currentOperation) {
             MathOperation.ADD -> currentDigit += this.insideSpace
@@ -166,12 +179,18 @@ class SimpleActivity : AppCompatActivity() {
         if (!isNextClear)
             this.insideSpace = textPlace.text.toString().toDouble()
         currentInput.clear()
-        currentInput.insert(0, currentDigit.toString())
+
+        if (currentDigit.rem(1.0) == 0.0) {
+            currentInput.insert(0, currentDigit.toInt().toString())
+        }
+        else
+            currentInput.insert(0, currentDigit.toString())
         updateDisplay()
         isNextClear = true
     }
 
     private fun setMathOperation(operation: MathOperation) {
+        buttonCCETimesToZero()
         if (currentOperation !== MathOperation.NONE && !isNextClear) {
             getResult()
         }
@@ -184,6 +203,7 @@ class SimpleActivity : AppCompatActivity() {
 
 
     private fun changeSign() {
+        buttonCCETimesToZero()
         if (textPlace.text.toString() != "0") {
             val currentDisplay = textPlace.text.toString()
             if (currentDisplay.first() == '-') {
@@ -199,12 +219,17 @@ class SimpleActivity : AppCompatActivity() {
         }
     }
 
-    private fun handleClearAll() {
-        insideSpace = 0.0
-        currentOperation = MathOperation.NONE
-        isNextClear = false
+    private fun clearDisplay() {
         currentInput.clear()
         appendNumber("0")
+    }
+
+    private fun handleClearAll() {
+        insideSpace = 0.0
+        buttonCCETimesToZero()
+        currentOperation = MathOperation.NONE
+        isNextClear = false
+        clearDisplay()
     }
 
     private fun handleClear() {
@@ -225,6 +250,7 @@ class SimpleActivity : AppCompatActivity() {
     }
 
     private fun appendNumber(number: String) {
+        buttonCCETimesToZero()
         if (isNextClear) {
             this.insideSpace = textPlace.text.toString().toDouble()
             currentInput.clear()
