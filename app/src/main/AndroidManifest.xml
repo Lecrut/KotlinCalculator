@@ -21,10 +21,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SimpleActivity">
+        <activity android:name=".SimpleActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            >
 
         </activity>
-        <activity android:name=".ScientificActivity">
+        <activity android:name=".ScientificActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            >
 
         </activity>
         <activity android:name=".InfoActivity">

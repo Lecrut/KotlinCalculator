@@ -7,14 +7,14 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
-class SimpleActivity : AppCompatActivity() {
+open class SimpleActivity : AppCompatActivity() {
 
-    private lateinit var currentInput: StringBuilder;
-    private lateinit var textPlace: TextView;
+    lateinit var currentInput: StringBuilder;
+    lateinit var textPlace: TextView;
     private var currentOperation: MathOperation = MathOperation.NONE;
     private var insideSpace: Double = 0.0;
     private var isNextClear: Boolean = false;
-    private var buttonCCETimes: Int = 0;
+    var buttonCCETimes: Int = 0;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -150,7 +150,7 @@ class SimpleActivity : AppCompatActivity() {
         buttonCCETimes = 0
     }
 
-    private fun getResult() {
+    fun getResult() {
         buttonCCETimesToZero()
         var currentDigit = textPlace.text.toString().toDouble()
         when( this.currentOperation) {
@@ -189,7 +189,7 @@ class SimpleActivity : AppCompatActivity() {
         isNextClear = true
     }
 
-    private fun setMathOperation(operation: MathOperation) {
+    fun setMathOperation(operation: MathOperation) {
         buttonCCETimesToZero()
         if (currentOperation !== MathOperation.NONE && !isNextClear) {
             getResult()
@@ -202,7 +202,7 @@ class SimpleActivity : AppCompatActivity() {
     }
 
 
-    private fun changeSign() {
+    fun changeSign() {
         buttonCCETimesToZero()
         if (textPlace.text.toString() != "0") {
             val currentDisplay = textPlace.text.toString()
@@ -219,12 +219,12 @@ class SimpleActivity : AppCompatActivity() {
         }
     }
 
-    private fun clearDisplay() {
+    fun clearDisplay() {
         currentInput.clear()
         appendNumber("0")
     }
 
-    private fun handleClearAll() {
+    fun handleClearAll() {
         insideSpace = 0.0
         buttonCCETimesToZero()
         currentOperation = MathOperation.NONE
@@ -232,7 +232,7 @@ class SimpleActivity : AppCompatActivity() {
         clearDisplay()
     }
 
-    private fun handleClear() {
+    fun handleClear() {
         if (currentInput.isNotEmpty() && textPlace.text.toString() != "0") {
             currentInput.deleteCharAt(currentInput.length - 1)
             updateDisplay()
@@ -249,7 +249,7 @@ class SimpleActivity : AppCompatActivity() {
         textPlace.text = currentInput.toString()
     }
 
-    private fun appendNumber(number: String) {
+    fun appendNumber(number: String) {
         buttonCCETimesToZero()
         if (isNextClear) {
             this.insideSpace = textPlace.text.toString().toDouble()
