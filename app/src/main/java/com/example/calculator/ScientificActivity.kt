@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import java.lang.Math.pow
 import kotlin.math.*
 
@@ -12,12 +13,12 @@ class ScientificActivity : SimpleActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_scientific)
 
-        val buttonBackClick = findViewById<Button>(R.id.backButton)
-        buttonBackClick.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            this.finish()
-            startActivity(intent)
-        }
+//        val buttonBackClick = findViewById<Button>(R.id.backButton)
+//        buttonBackClick.setOnClickListener {
+//            val intent = Intent(this, MainActivity::class.java)
+//            this.finish()
+//            startActivity(intent)
+//        }
 
         this.textPlace = findViewById<TextView>(R.id.textResultField)
         this.currentInput = StringBuilder()
@@ -204,8 +205,22 @@ class ScientificActivity : SimpleActivity() {
             ExpressMathOperation.SINE -> sin(currentDigit)
             ExpressMathOperation.COSINE -> cos(currentDigit)
             ExpressMathOperation.TANGENT -> tan(currentDigit)
-            ExpressMathOperation.SQRT -> sqrt(currentDigit)
-            ExpressMathOperation.FACTORIAL -> factorialRecursive(currentDigit.toInt())
+            ExpressMathOperation.SQRT -> {
+                if (textPlace.text.toString().toDouble() < 0 ) {
+                    Toast.makeText(applicationContext, "Nie można pierwiastkować liczb ujemnych!",
+                        Toast.LENGTH_SHORT).show()
+                    return
+                }
+                sqrt(currentDigit)
+            }
+            ExpressMathOperation.FACTORIAL -> {
+                if (textPlace.text.toString().toDouble().rem(1.0) != 0.0 || textPlace.text.toString().toDouble() < 0 ) {
+                    Toast.makeText(applicationContext, "Niepoprawna liczba!",
+                        Toast.LENGTH_SHORT).show()
+                    return
+                }
+                factorialRecursive(currentDigit.toInt())
+            }
             ExpressMathOperation.SQUARE -> currentDigit*currentDigit
             ExpressMathOperation.NATURAL_L0GARITHM -> ln(currentDigit)
             ExpressMathOperation.L0GARITHM -> log10(currentDigit)
@@ -219,6 +234,5 @@ class ScientificActivity : SimpleActivity() {
             currentInput.insert(0, result.toString())
         updateDisplay()
         isNextClear = true
-
     }
 }

@@ -22,12 +22,12 @@ open class SimpleActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_simple)
 
-        val buttonBackClick = findViewById<Button>(R.id.backButton)
-        buttonBackClick.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            this.finish()
-            startActivity(intent)
-        }
+//        val buttonBackClick = findViewById<Button>(R.id.backButton)
+//        buttonBackClick.setOnClickListener {
+//            val intent = Intent(this, MainActivity::class.java)
+//            this.finish()
+//            startActivity(intent)
+//        }
 
         this.textPlace = findViewById<TextView>(R.id.textResultField)
         this.currentInput = StringBuilder()
